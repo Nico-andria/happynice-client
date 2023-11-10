@@ -1,23 +1,108 @@
-import logo from './logo.svg';
-import './App.css';
+//import "./App.css";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./pages/Home";
+import PublicRoutes from "./components/PublicRoutes";
+import ProtectedRoutes from "./components/ProtectedRoutes";
+import Chambres from "./pages/Chambres";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Contact from "./pages/Contact";
+import Reservation from "./pages/Reservation";
+import Detailsscreen from "./pages/Details/Detailsscreen";
+import Booking from "./pages/Booking";
+import MyBookings from "./pages/MyBookings";
+import Tab from "./pages/Tab";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PublicRoutes>
+                <Homepage />
+              </PublicRoutes>
+            }
+          />
+          <Route
+            path="/tab"
+            element={
+              <PublicRoutes>
+                <Tab />
+              </PublicRoutes>
+            }
+          />
+
+          <Route
+            path="/login"
+            element={
+              <PublicRoutes>
+                <Login />
+              </PublicRoutes>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <PublicRoutes>
+                <Register />
+              </PublicRoutes>
+            }
+          />
+          <Route
+            path="/chambres"
+            element={
+              <PublicRoutes>
+                <Chambres />
+              </PublicRoutes>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <PublicRoutes>
+                <Contact />
+              </PublicRoutes>
+            }
+          />
+          <Route
+            path="/reservation"
+            element={
+              <ProtectedRoutes>
+                <Reservation />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/book/:bookingId"
+            element={
+              <ProtectedRoutes>
+                <Booking />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/details/:roomid"
+            element={
+              <PublicRoutes>
+                <Detailsscreen />
+              </PublicRoutes>
+            }
+          />
+
+          <Route
+            path="/mesreservations"
+            element={
+              <ProtectedRoutes>
+                <MyBookings />
+              </ProtectedRoutes>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,118 @@
+html, body
+{
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    line-height: 2.5em;
+
+}
+.container-fluid
+{
+    overflow: hidden;
+}
+
+p
+{
+    margin: 0;
+}
+a
+{
+    color: white;
+    text-decoration: none;
+}
+a:hover
+{
+    color: yellow;
+    text-decoration: none;
+    border-bottom: solid 2px yellow;
+}
+
+.topbar
+{
+    color: white;
+    padding-top: 19px;
+    width: 100%;
+    padding-bottom: 19px;
+}
+
+.topbar span
+{
+    font-size: large;
+    color: yellow;
+}
+.topbar a
+{
+    font-size: 14px;
+    padding: 25px 0px;
+    transition: .3s linear;
+}
+
+
+.selected
+{
+    color: yellow;
+    border-bottom: solid 2px yellow;
+
+}
+
+.header-black
+{
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+footer
+{
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 100px;
+}
+.footer-section
+{
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    
+}
+.footer-item h4, .footer-item h3
+{
+    color: yellow;
+}
+
+.footer-section .lnr
+{
+    color: yellow;
+    margin-right: 5px;
+} 
+h3 em
+{
+    color: white;
+    font-style: normal;
+}
+
+.social-icons {
+    padding: 0;
+    margin: 0;
+  }
+.social-icons li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+.social-icons li a {
+    font-size: 30px;
+    color: #b3b3b3 !important;
+}
+.social-icons li a:hover, .social-icons li a:focus, .social-icons li a:active {
+    color: yellow !important;
+    outline: none;
+    text-decoration: none !important;
+}
+.social-icons li a:hover i, .social-icons li a:focus i, .social-icons li a:active i {
+    text-decoration: none;
+}
