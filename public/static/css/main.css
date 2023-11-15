@@ -31,7 +31,7 @@ ul {
   list-style-type: none;
 }
 .header {
-  background-image: url(../images/face.jpg);
+  /*background-image: url(../images/face.jpg);*/
   background-size: cover;
   background-position: center;
   background-size: cover;

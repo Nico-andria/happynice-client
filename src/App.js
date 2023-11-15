@@ -13,6 +13,10 @@ import Detailsscreen from "./pages/Details/Detailsscreen";
 import Booking from "./pages/Booking";
 import MyBookings from "./pages/MyBookings";
 import Tab from "./pages/Tab";
+import ForgottenPassword from "./pages/ForgottenPassword";
+import ResetPassword from "./pages/ResetPassword";
+import Success from "./_helpers/Success";
+import EmailVerify from "./_helpers/EmailVerify";
 
 function App() {
   return (
@@ -49,6 +53,39 @@ function App() {
             element={
               <PublicRoutes>
                 <Register />
+              </PublicRoutes>
+            }
+          />
+          <Route
+            path="/emailVerified"
+            element={
+              <PublicRoutes>
+                <EmailVerify />
+              </PublicRoutes>
+            }
+          />
+
+          <Route
+            path="/forgottenpassword"
+            element={
+              <PublicRoutes>
+                <ForgottenPassword />
+              </PublicRoutes>
+            }
+          />
+          <Route
+            path="/resetPassword/:userId?/:resetString?"
+            element={
+              <PublicRoutes>
+                <ResetPassword />
+              </PublicRoutes>
+            }
+          />
+          <Route
+            path="/success"
+            element={
+              <PublicRoutes>
+                <Success />
               </PublicRoutes>
             }
           />

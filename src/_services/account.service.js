@@ -31,10 +31,32 @@ let isLogged = () => {
   return !!token;
 };
 
+let forgottenPassword = ({ email, redirectUrl = "" }) => {
+  try {
+    const { data } = Axios.post("/api/users/requestPasswordReset", {
+      email,
+      redirectUrl,
+    });
+    return data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+let resetPassword = (payload) => {
+  try {
+    const { data } = Axios.post("/api/users/resetPassword", payload);
+    return data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+
 export const accountService = {
   login,
   register,
   saveToken,
   logout,
   isLogged,
+  forgottenPassword,
+  resetPassword,
 };

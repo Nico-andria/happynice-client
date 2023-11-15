@@ -21,7 +21,7 @@ function Register() {
   const [isLoading, setIsLoading] = useState();
   const [errorMessage, setErrorMessage] = useState("");
 
-  async function register() {
+  const register = async () => {
     if (password === cpassword) {
       const user = {
         firstname,
@@ -34,14 +34,14 @@ function Register() {
       try {
         setIsLoading(true);
         const result = await accountService.register(user);
-        if (result.success) {
+        if (result.status === "PENDING") {
           setFirstName("");
           setEmail("");
           setPassword("");
           setCPassword("");
           Swal.fire(
-            "Fait",
-            "Votre profil a bien été enregistré",
+            "Envoyé",
+            "Veuillez consultez votre mail pour finaliser l'enregistrement",
             "success"
           ).then((res) => {
             window.location.href = "/login";
@@ -60,7 +60,7 @@ function Register() {
     } else {
       Swal.fire("Oops", "Les mots de passe ne correspondent pas", "error");
     }
-  }
+  };
 
   useEffect(() => {
     const response = accountService.isLogged();

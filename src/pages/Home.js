@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
+import { Tabs, message } from "antd";
 
 const Home = () => {
   const [selectedTab, setSelectedTab] = useState("detente");
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab, e) => {
+    e.preventDefault();
     setSelectedTab(tab);
   };
   return (
@@ -112,7 +114,7 @@ const Home = () => {
                         : "py-3 px-3 mx-1"
                     }
                     id="link-detente"
-                    onClick={() => handleTabClick("detente")}>
+                    onClick={(e) => handleTabClick("detente", e)}>
                     Espace détente
                   </a>
                   <a
@@ -123,14 +125,13 @@ const Home = () => {
                         : "py-3 px-3 mx-1"
                     }
                     id="link-restauration"
-                    onClick={() => handleTabClick("restauration")}>
+                    onClick={(e) => handleTabClick("restauration", e)}>
                     Espace restauration
                   </a>
                 </div>
                 <div className="col"></div>
                 <div className="reveal-3">
-                  {/* <div className=""> */}
-                  {selectedTab === "detente" ? (
+                  {selectedTab === "detente" && (
                     <div
                       className="section-content content-detente shown"
                       id="section-detente">
@@ -168,10 +169,12 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                  ) : (
+                  )}
+
+                  {selectedTab === "restauration" && (
                     <div
-                      className="section-content section-restauration"
-                      id="section-restauration">
+                      className="section-content content-detente shown"
+                      id="section-detente">
                       <div className="py-5">
                         <p>
                           Profitez des délices proposés par notre carte afin de

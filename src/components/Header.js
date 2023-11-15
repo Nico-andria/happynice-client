@@ -3,7 +3,9 @@ import React from "react";
 function Header() {
   return (
     <>
-      <header className="header">
+      <header
+        className="header"
+        style={{ top: "-60px", backgroundImage: "static/images/face.jpg" }}>
         <div className="overlay"></div>
         <div className="container-fluid index-up">
           <div className="banner">

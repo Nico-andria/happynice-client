@@ -3,7 +3,9 @@ import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { accountService } from "../_services/account.service";
 
-function Navbar() {
+import "./navbar.css";
+
+const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isHome, setIsHome] = useState(location.pathname === "/");
@@ -65,29 +67,36 @@ function Navbar() {
 
   const menuToRender = user ? privateMenuRight : publicMenuRight;
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       <nav
-        class={`navbar navbar-expand-sm navbar-dark bg-dark  ${
+        className={`navbar navbar-expand-sm navbar-dark bg-dark  ${
           isHome ? "header-home" : "header-black"
         }`}>
         <div
-          class={`container-fluid fixed-top ${
+          className={`container-fluid fixed-top ${
             isHome ? "header-home" : "header-black"
           }`}>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
+          <div
+            className="menu"
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+            }}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div className="collapse navbar-collapse" id="mynavbar">
+            <ul
+              className={
+                menuOpen ? "navbar-nav me-auto open" : "navbar-nav me-auto"
+              }>
               {publicMenu.map((item, index) => {
                 const isActive = window.location.pathname === item.path;
                 return (
-                  <li class="nav-item">
+                  <li className="nav-item">
                     <a
                       href={item.path}
                       className={`nav-link link px-3 ${
@@ -102,14 +111,14 @@ function Navbar() {
                 );
               })}
             </ul>
-            <div class="d-flex">
+            <div className="d-flex">
               {!user ? (
                 <>
-                  <ul class="navbar-nav me-auto">
+                  <ul className="navbar-nav me-auto">
                     {publicMenuRight.map((item) => {
                       const isActive = window.location.pathname === item.path;
                       return (
-                        <li class="nav-item">
+                        <li className="nav-item">
                           <a
                             href={item.path}
                             className={`nav-link link px-3 ${
@@ -126,7 +135,7 @@ function Navbar() {
                 </>
               ) : (
                 <>
-                  <ul class="navbar-nav me-auto">
+                  <ul className="navbar-nav me-auto">
                     {privateMenuRight.map((item, index) => {
                       const isActive = window.location.pathname === item.path;
                       return (
@@ -151,6 +160,6 @@ function Navbar() {
       </nav>
     </>
   );
-}
+};
 
 export default Navbar;

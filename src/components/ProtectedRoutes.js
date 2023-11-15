@@ -38,6 +38,11 @@ const ProtectedRoutes = (props) => {
       navigate("/login");
     }
   }, []);
+
+  /**
+   * Déconnexion automatique
+   */
+
   return user && <DefaultLayout user={user}>{props.children}</DefaultLayout>;
 };
 
