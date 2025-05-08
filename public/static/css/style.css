@@ -1,0 +1,92 @@
+.header-black {
+  background-color: black;
+}
+.header-home {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+.topbar {
+  padding-top: 13px;
+  padding-bottom: 19px;
+}
+.room-section {
+  margin-top: 50px;
+}
+.room-section .container {
+  background-color: white;
+  padding: 0px;
+  font-size: 18px;
+  box-shadow: 2px 5px 5px lightgray;
+  border-radius: 7px;
+  padding: 80px 30px;
+}
+.album-item {
+  margin-bottom: 20px;
+}
+.second-image {
+  margin-bottom: 12px;
+}
+
+.room-text h2 {
+  display: inline-block;
+}
+.room-title {
+  position: relative;
+  margin-bottom: 10px;
+}
+.room-barre {
+  display: inline-block;
+  width: 200px;
+  height: 2.5px;
+  background-color: black;
+  position: absolute;
+  top: 18px;
+  left: 150px;
+}
+.room-content {
+  padding-top: 20px;
+}
+
+.room-features {
+  margin-right: 35px;
+  position: relative;
+}
+.room-content span {
+  font-size: 0.82em;
+  position: absolute;
+  top: -3px;
+}
+.room-features i {
+  font-size: 25px;
+  color: gold;
+  margin-right: 20px;
+}
+
+.contact-section {
+  font-size: 18px;
+  border: solid 1px black;
+}
+
+.contact-section i {
+  padding-right: 20px;
+}
+
+.contact-section a {
+  color: black;
+}
+.contact-section h1 {
+  color: gold;
+  padding-top: 30px;
+  padding-bottom: 18px;
+}
+.contact-section img {
+  opacity: 0.9;
+}
+.button-submit {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Ajoutez d'autres styles CSS selon vos besoins */
+}
