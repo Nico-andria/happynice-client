@@ -49,7 +49,7 @@ const ProtectedRoutes = (props) => {
 
       try {
         const response = await axios.post(
-          "http://localhost:8800/api/users/verifyToken",
+          "https://happynice-back.onrender.com/api/users/verifyToken",
           { token }
         );
 

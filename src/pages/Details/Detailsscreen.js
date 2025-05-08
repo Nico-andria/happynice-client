@@ -36,7 +36,7 @@ function Detailsscreen() {
       try {
         setLoading(true);
         const response = await axios.get(
-          "http://localhost:8800/api/rooms/getRoomById/" + roomid
+          "https://happynice-back.onrender.com/api/rooms/getRoomById/" + roomid
         );
         setRoom(response.data.room);
         setLoading(false);
@@ -184,7 +184,8 @@ function Detailsscreen() {
                         } */
                           bookRoom
                         }
-                        style={{ backgroundColor: "yellow", color: "black" }}>
+                        style={{ backgroundColor: "yellow", color: "black" }}
+                      >
                         Réserver maintenant
                       </button>
                     ) : (

@@ -14,10 +14,14 @@ const ForgottenPassword = () => {
     try {
       setIsLoading(true);
       const response = await axios
-        .post("http://localhost:8800/api/users/requestPasswordReset", {
-          email,
-          redirectUrl: "http://localhost:3000/resetPassword",
-        })
+        .post(
+          "https://happynice-back.onrender.com/api/users/requestPasswordReset",
+          {
+            email,
+            redirectUrl: "https://happy-nice.netlify.app/resetPassword",
+            // redirectUrl: "http://localhost:3000/resetPassword",
+          }
+        )
         .then((res) => {
           if (res.data.status === "PENDING") {
             message.success(res.data.message);

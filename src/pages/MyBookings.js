@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const MyBookings = () => {
   const { user } = useSelector((state) => state.users);
-  const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
   const [bookings, setBookings] = useState([]);
 
@@ -18,7 +18,7 @@ const MyBookings = () => {
   const [cancelIsLoading, setCancelIsLoading] = useState(false);
   const [error, setError] = useState();
 
-  const [isLoading, setIsLoading] = useState(false);
+  //   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -58,7 +58,7 @@ const MyBookings = () => {
       };
       const result = await (
         await axios.post(
-          "http://localhost:8800/api/bookings/cancelBooking",
+          "https://happynice-back.onrender.com/api/bookings/cancelBooking",
           {
             bookingId,
             roomId,

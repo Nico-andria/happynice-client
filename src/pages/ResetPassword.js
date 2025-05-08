@@ -23,7 +23,7 @@ function ResetPassword() {
 
       /* const response = accountService.resetPassword(values);*/
       await axios
-        .post("http://localhost:8800/api/users/resetPassword", {
+        .post("https://happynice-back.onrender.com/api/users/resetPassword", {
           userId,
           resetString,
           newPassword,

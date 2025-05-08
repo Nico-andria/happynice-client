@@ -42,7 +42,8 @@ const Booking = () => {
         setIsLoading(true);
 
         const result = await axios.get(
-          "http://localhost:8800/api/bookings/getBookById/" + bookingId,
+          "https://happynice-back.onrender.com/api/bookings/getBookById/" +
+            bookingId,
           config
         );
         if (result.data.success) {
